@@ -1,4 +1,6 @@
-public class Saiki {
+package saiki;
+
+public class Factorial {
 
     private static long factorial(int number) {
         if(number == 1) {
