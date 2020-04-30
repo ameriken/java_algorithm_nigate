@@ -43,6 +43,7 @@ public class Dfs {
         prob[1] = west  / 100.0;
         prob[2] = south / 100.0;
         prob[3] = north / 100.0;
+        // 100マス並んでるとして、真ん中にロボットを置くために50,50を渡している
         return dfs(50, 50, n);
     }
 
