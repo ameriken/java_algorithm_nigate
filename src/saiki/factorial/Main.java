@@ -1,6 +1,6 @@
-package saiki;
+package saiki.factorial;
 
-public class Factorial {
+public class Main {
 
     private static long factorial(int number) {
         if(number == 1) {

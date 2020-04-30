@@ -1,6 +1,6 @@
-package saiki;
+package saiki.fibo;
 
-public class Fibo {
+public class Main {
 
     private static int fibo(int n) {
 

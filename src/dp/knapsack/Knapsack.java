@@ -1,0 +1,45 @@
+package dp.knapsack;
+
+import java.util.Arrays;
+
+public class Knapsack {
+
+    private final int N;
+    private final int[] size;
+    private final int[] value;
+
+
+    public Knapsack(int[] size, int[] value) {
+        this.N = size.length;
+        this.size = (int[])size.clone();
+        this.value = (int[])value.clone();
+    }
+
+    public void solve(int m) {
+        int[] total = new int[m + 1];
+
+        int[] choice = new int[m + 1];
+        Arrays.fill(choice, -1);
+
+        int repackTotal;
+
+        System.out.printf("ナップザックの大きさは%d%n", m);
+
+        for (int i = 0; i < N; i++) {
+            for (int j = size[i]; j <= m; j++) {
+                repackTotal = total[j - size[i]] + value[i];
+                if (repackTotal > total[j]) {
+                    total[j] = repackTotal;
+                    choice[j] = i;
+                }
+            }
+        }
+
+        for (int i = m; choice[i] >= 0; i -= size[choice[i]]) {
+            System.out.printf("品物 %d (価値 %d)を詰め込む %n", choice[i], value[choice[i]]);
+        }
+    }
+
+
+
+}
