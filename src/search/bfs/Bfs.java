@@ -17,7 +17,7 @@ public class Bfs {
 
         for (int i = 0; i < height; i++) {
             for (int k = 0; k < width; k++) {
-                // boardは全て0で初期化されている
+                // boardは全て-1で初期化されている
                 board[i][k] = -1;
             }
         }
