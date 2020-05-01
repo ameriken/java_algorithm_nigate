@@ -1,5 +1,6 @@
 package search.bfs;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -15,9 +16,9 @@ public class Bfs {
         // width * height でマスの全体を作成している
         int[][] board = new int[height][width];
 
+        // boardは全て-1で初期化されている
         for (int i = 0; i < height; i++) {
             for (int k = 0; k < width; k++) {
-                // boardは全て-1で初期化されている
                 board[i][k] = -1;
             }
         }
@@ -33,6 +34,8 @@ public class Bfs {
         while (!queueX.isEmpty()) {
             int x = queueX.poll(), y = queueY.poll();
 
+            // 下、右、上、左の順で動く
+            // 6時から逆時計回り
             for (int m = 0; m < moveRow.length; m++) {
 
                 // 始点から動けるマスを追加している
@@ -49,6 +52,10 @@ public class Bfs {
                     queueY.add(nextY);
                 }
             }
+            //System.out.println(Arrays.toString(board[0]));
+            //System.out.println(Arrays.toString(board[1]));
+            //System.out.println(Arrays.toString(board[2]));
+            //System.out.println("------");
         }
 
         for (int m = 0; m < height; m++) {
