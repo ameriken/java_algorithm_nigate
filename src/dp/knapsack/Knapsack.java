@@ -17,7 +17,6 @@ public class Knapsack {
 
     public void solve(int m) {
         int[] total = new int[m + 1];
-
         int[] choice = new int[m + 1];
         Arrays.fill(choice, -1);
 
