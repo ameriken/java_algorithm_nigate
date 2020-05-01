@@ -7,7 +7,9 @@ public class Main {
     public static void main(String[] args)
     {
         Knapsack knapsack = new Knapsack(
+                // 商品の重さ
                 new int[] { 2, 3, 5, 7, 9},
+                // 商品の価値
                 new int[] { 2, 4, 7, 11, 14}
         );
 
@@ -16,11 +18,9 @@ public class Main {
         //        new int[] { 2, 4, 7, 11, 14}
         //);
 
-        int size = 0;
-        size = Integer.parseInt(args[0]);
 
 
-        knapsack.solve(size);
+        knapsack.solve(10);
     }
 }
 

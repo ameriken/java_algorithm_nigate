@@ -1,8 +1,8 @@
 package search.bfs;
 
 
-//import static search.bfs.Bfs.longestPath;
-import static search.bfs.Practice.longestPath;
+import static search.bfs.Bfs.longestPath;
+//import static search.bfs.Practice.longestPath;
 
 public class Main {
 
