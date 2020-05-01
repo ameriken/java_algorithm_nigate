@@ -11,6 +11,7 @@ public class Practice {
         int width = maze[0].length(), height = maze.length;
         int[][] board = new int[height][width];
 
+        // ここにコードを書いてください。
         return max;
     }
 }

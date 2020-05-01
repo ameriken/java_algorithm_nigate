@@ -14,6 +14,7 @@ public class Practice {
     }
 
     public void solve(int m) {
+        // ここにコードを書いてください。
 
     }
 }
