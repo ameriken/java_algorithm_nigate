@@ -1,5 +1,7 @@
 package dp.knapsack;
 
+import java.util.Arrays;
+
 public class Practice {
     // ここで書いていき覚えていく
     private final int N;
