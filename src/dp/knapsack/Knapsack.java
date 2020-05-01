@@ -28,7 +28,10 @@ public class Knapsack {
             for (int j = size[i]; j <= m; j++) {
                 repackTotal = total[j - size[i]] + value[i];
                 if (repackTotal > total[j]) {
+                    // 何もない状態から商品1を足した時の合計
+                    // 商品1を足した時の合計から商品2を足した合計~繰り返し
                     total[j] = repackTotal;
+                    // 選択した商品
                     choice[j] = i;
                 }
             }
