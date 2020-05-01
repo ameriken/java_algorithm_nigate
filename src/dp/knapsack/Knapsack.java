@@ -41,7 +41,4 @@ public class Knapsack {
             System.out.printf("品物 %d (価値 %d)を詰め込む %n", choice[i], value[choice[i]]);
         }
     }
-
-
-
 }
