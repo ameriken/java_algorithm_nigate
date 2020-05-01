@@ -17,5 +17,6 @@ public class Practice {
     public void solve(int m) {
         // ここにコードを書いてください。
 
+        //System.out.printf("品物 %d (価値 %d)を詰め込む %n", );
     }
 }
