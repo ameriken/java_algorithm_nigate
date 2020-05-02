@@ -12,14 +12,12 @@ public class DirectedAdjacencyList {
         station[4] = new Station("茅ヶ崎");
         station[5] = new Station("東京");
 
-
-
         // 鎌倉
-        station[0].addStation(station[3]);
         station[0].addStation(station[1]);
+        station[0].addStation(station[3]);
         // 藤沢
-        station[1].addStation(station[4]);
         station[1].addStation(station[2]);
+        station[1].addStation(station[4]);
         // 横浜
         station[2].addStation(station[0]);
         station[2].addStation(station[5]);

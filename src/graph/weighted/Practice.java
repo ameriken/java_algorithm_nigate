@@ -5,12 +5,12 @@ public class Practice {
     private static String[] stations = {"横浜", "武蔵小杉","品川","渋谷","新橋","溜池山王"};
 
     private static int[][] adjacencyMatrix = {
-            new int[]{ 0, 0, 0, 0, 0, 0},
-            new int[]{ 0, 0, 0, 0, 0, 0},
-            new int[]{ 0, 0, 0, 0, 0, 0},
-            new int[]{ 0, 0, 0, 0, 0, 0},
-            new int[]{ 0, 0, 0, 0, 0, 0},
-            new int[]{ 0, 0, 0, 0, 0, 0}
+            new int[]{ 0, 0, 0, 0, 0, 0}, //横浜
+            new int[]{ 0, 0, 0, 0, 0, 0}, //武蔵小杉
+            new int[]{ 0, 0, 0, 0, 0, 0}, //品川
+            new int[]{ 0, 0, 0, 0, 0, 0}, //渋谷
+            new int[]{ 0, 0, 0, 0, 0, 0}, //新橋
+            new int[]{ 0, 0, 0, 0, 0, 0}  //溜池山王
     };
 
     public static void main(String[] args) {
