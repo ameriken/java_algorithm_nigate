@@ -53,6 +53,7 @@ public class Dijkstra {
             for(int i = 0; i < STATION_NUMBER; i++) {
                 if(!fix[i] && adjacencyMatrix[minStation][i] > 0) {
                     int newTime = minTime + adjacencyMatrix[minStation][i];
+                    // 経路未開拓 or 新しい道の方が短いか
                     if(currentCost[i] == -1 || currentCost[i] > newTime) {
                         currentCost[i] = newTime;
                     }
