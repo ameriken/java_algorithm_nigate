@@ -6,7 +6,7 @@ import static sort.merge.MergeSort.merge;
 
 public class Main {
 
-    private static final int N = 10;
+    private static final int N = 5;
     private static int[] sort = new int[N];
 
     public static void main(String args[]) {
