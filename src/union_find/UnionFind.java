@@ -30,8 +30,8 @@ public class UnionFind {
         }
         //aとbを結合し、bの親をaとする
         //uni[a]は親のサイズを表示する
-        //uni[b]は親が何番にいるかを指定する
         uni[a] = uni[a] + uni[b];
+        //uni[b]は親が何番にいるかを指定する
         uni[b] = a;
         return true;
     }
