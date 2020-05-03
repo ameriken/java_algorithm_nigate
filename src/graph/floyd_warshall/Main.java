@@ -2,7 +2,7 @@ package graph.floyd_warshall;
 
 public class Main {
 
-    final static int INF = 99999, V = 4;
+    final static int INF = 99999;
     public static void main (String[] args)
     {
         /*
@@ -26,7 +26,8 @@ public class Main {
          0 - 0 - 3 | 1 - 0 - 3 | 2 - 0 - 3 | 3 - 0 - 3
          上記のようにして全てのパターンを調べる、この経由地点を0~3調べ尽くす
         */
-
+        // 頂点
+        int V = 4;
         int graph[][] = {
                 {0,   5,  INF, 10}, // 0
                 {INF, 0,   3, INF}, // 1
