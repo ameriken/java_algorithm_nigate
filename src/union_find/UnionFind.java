@@ -2,7 +2,15 @@ package union_find;
 
 public class UnionFind {
 
-    int[] uni = new int[1000];
+    int[] uni;
+
+    //-1で初期化が必要です
+    //サイズをコンストラクタで受け取れるようにしましょう（1000決め打ちだと、1000までのデータにしか対応できない）
+    UnionFind(int size){
+        uni = new int[size];
+        for(int i=0;i<size;i++) uni[i] = -1;
+    }
+
     // 頂点aの所属するグループを調べる
     int root(int a) {
         //負の値が入ってれば、それが親

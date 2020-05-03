@@ -1,5 +1,7 @@
 package union_find;
 
+// https://atc001.contest.atcoder.jp/tasks/unionfind_a
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,12 +20,14 @@ public class Main {
                 new int[]{1, 0, 0}
         };
 
-        UnionFind uf = new UnionFind();
+        UnionFind uf = new UnionFind(n);
+
         for (int i = 0; i < p_a_b.length; i++) {
             if (p_a_b[i][0] == 0) {
-                uf.connect(p_a_b[i][1], p_a_b[i][1]);
+                uf.connect(p_a_b[i][1], p_a_b[i][2]);
             } else {
-                System.out.println(uf.isConnect(p_a_b[i][1], p_a_b[i][1]));
+                if(uf.isConnect(p_a_b[i][1], p_a_b[i][2])) System.out.println("Yes");
+                else System.out.println("No");
             }
         }
     }

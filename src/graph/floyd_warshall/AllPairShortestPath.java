@@ -6,6 +6,7 @@ public class AllPairShortestPath {
         int dist[][] = new int[V][V];
         int i, j, k;
 
+        // ここでdistを初期化する
         for (i = 0; i < V; i++) {
             for (j = 0; j < V; j++) {
                 dist[i][j] = graph[i][j];
