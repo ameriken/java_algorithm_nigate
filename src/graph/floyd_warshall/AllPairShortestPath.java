@@ -16,6 +16,10 @@ public class AllPairShortestPath {
         for (k = 0; k < V; k++) {
             for (i = 0; i < V; i++) {
                 for (j = 0; j < V; j++) {
+                    //System.out.printf("dist[%d][%d]=%d%n", i,k, dist[i][k]);
+                    //System.out.printf("dist[%d][%d]=%d%n", k,j, dist[k][j]);
+                    //System.out.print(">>>>>>>>>>>>>>>>>>>>");
+                    //System.out.printf("dist[%d][%d]=%d%n", i,j, dist[i][j]);
                     if (dist[i][k] + dist[k][j] < dist[i][j]) {
                         dist[i][j] = dist[i][k] + dist[k][j];
                     }
