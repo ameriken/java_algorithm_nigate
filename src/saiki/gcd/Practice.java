@@ -3,9 +3,7 @@ package saiki.gcd;
 public class Practice {
     public static Long gcd(Long a, Long b) {
         // ここにこーどを書く
-        if(a < b) return gcd(b, a);
-        if(b == 0) return  1L;
-        return gcd(b, a%b);
+        return 1L;
     }
 
 
