@@ -3,10 +3,11 @@ package graph.dijkstra;
 import javax.print.DocFlavor;
 
 public class Dijkstra {
-    private static final int STATION_NUMBER = 6;
-    private static final int START_STATION = 0;
 
     private static String[] stations = {"横浜", "武蔵小杉","品川","渋谷","新橋","溜池山王"};
+    private static final int STATION_NUMBER = stations.length;
+    private static final int START_STATION = 0;
+
     private static int currentCost[];
     private static boolean fix[];
 
@@ -20,7 +21,7 @@ public class Dijkstra {
     };
 
     public static void main(String[] args) {
-        currentCost = new  int[STATION_NUMBER];
+        currentCost = new int[STATION_NUMBER];
         fix = new boolean[STATION_NUMBER];
 
         for(int i = 0; i < STATION_NUMBER; i++){

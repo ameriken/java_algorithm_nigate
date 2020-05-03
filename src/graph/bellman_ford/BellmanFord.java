@@ -15,6 +15,7 @@ public class BellmanFord {
         // スタートから全ての頂点の最短距離を調べている
         // 値が小さければ更新していく
         // 頂点の数分だけループすると負の重量でも対応できる
+        // V = 頂点, E = 辺
         for (int i = 0; i < V - 1; i++) {
             for (int j = 0; j < E; j++) {
                 if (dis[graph[j][0]] + graph[j][2] < dis[graph[j][1]]) {
