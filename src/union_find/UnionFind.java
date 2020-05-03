@@ -4,8 +4,7 @@ public class UnionFind {
 
     int[] uni;
 
-    //-1で初期化が必要です
-    //サイズをコンストラクタで受け取れるようにしましょう（1000決め打ちだと、1000までのデータにしか対応できない）
+    //-1で初期化
     UnionFind(int size){
         uni = new int[size];
         for(int i=0;i<size;i++) uni[i] = -1;
@@ -30,6 +29,8 @@ public class UnionFind {
             a ^= b;
         }
         //aとbを結合し、bの親をaとする
+        //uni[a]は親のサイズを表示する
+        //uni[b]は親が何番にいるかを指定する
         uni[a] = uni[a] + uni[b];
         uni[b] = a;
         return true;
