@@ -8,7 +8,7 @@ public class Main {
     private static final int STATION_NUMBER = stations.length;
     private static final int START_STATION = 0;
 
-    private static int currentCost[];
+    private static int currentTime[];
     private static boolean fix[];
 
     private static int[][] adjacencyMatrix = {
@@ -21,15 +21,15 @@ public class Main {
     };
 
     public static void main(String[] args) {
-        currentCost = new int[STATION_NUMBER];
+        currentTime = new int[STATION_NUMBER];
         fix = new boolean[STATION_NUMBER];
 
         for(int i = 0; i < STATION_NUMBER; i++){
-            currentCost[i] =  -1;
+            currentTime[i] =  -1;
             fix[i] = false;
         }
 
-        currentCost[START_STATION] = 0;
+        currentTime[START_STATION] = 0;
 
         for(;;) {
 
@@ -42,10 +42,10 @@ public class Main {
             // 次基点にする駅を調べる
             for(int i = 0; i < STATION_NUMBER; i++) {
                 // 探索済みではない && 最短距離を調べてない場所
-                if(!fix[i] && currentCost[i] != -1) {
+                if(!fix[i] && currentTime[i] != -1) {
                     // 暫定的に調べたい駅 or 暫定時間が現在のコストよりも大きいか
-                    if(minStation == -1 || minTime > currentCost[i]) {
-                        minTime = currentCost[i];
+                    if(minStation == -1 || minTime > currentTime[i]) {
+                        minTime = currentTime[i];
                         minStation = i;
                     }
                 }
@@ -60,8 +60,8 @@ public class Main {
                     // 新しい時間 = minStationを基点に隣接の駅のコストを足した時間
                     int newTime = minTime + adjacencyMatrix[minStation][i];
                     // 探索したい or 現在のコスト以下で隣接する駅に行けるか
-                    if(currentCost[i] == -1 || currentCost[i] > newTime) {
-                        currentCost[i] = newTime;
+                    if(currentTime[i] == -1 || currentTime[i] > newTime) {
+                        currentTime[i] = newTime;
                     }
                 }
             }
@@ -72,7 +72,7 @@ public class Main {
 
         for(int i =0; i < STATION_NUMBER; i++) {
             System.out.println(stations[START_STATION] + "->" + stations[i] + ":" +
-                    currentCost[i] + "分");
+                    currentTime[i] + "分");
         }
     }
 }

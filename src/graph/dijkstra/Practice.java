@@ -5,7 +5,7 @@ public class Practice {
     private static final int STATION_NUMBER = stations.length;
     private static final int START_STATION = 0;
 
-    private static int currentCost[];
+    private static int currentTime[];
     private static boolean fix[];
 
     private static int[][] adjacencyMatrix = {
@@ -20,7 +20,7 @@ public class Practice {
 
     public static void main(String[] args) {
 
-        currentCost = new int[STATION_NUMBER];
+        currentTime = new int[STATION_NUMBER];
         fix = new boolean[STATION_NUMBER];
 
         // ここにコードを書いてください。
@@ -28,11 +28,9 @@ public class Practice {
 
 
 
-
-
         for(int i =0; i < STATION_NUMBER; i++) {
             System.out.println(stations[START_STATION] + "->" + stations[i] + ":" +
-                    currentCost[i] + "分");
+                    currentTime[i] + "分");
         }
 
     }
