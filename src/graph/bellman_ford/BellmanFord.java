@@ -5,6 +5,7 @@ public class BellmanFord {
     static void execute(int graph[][], int V, int E, int src)
     {
         int []dis = new int[V];
+        //disは、スタート地点からの距離
         for (int i = 0; i < V; i++) {
             dis[i] = Integer.MAX_VALUE;
         }
@@ -12,7 +13,9 @@ public class BellmanFord {
         // スタート地点
         dis[src] = 0;
 
+        // スタート地点から各頂点までの最短距離を知りたい
         // スタートから全ての頂点の最短距離を調べている
+
         // 値が小さければ更新していく
         // 頂点の数分だけループすると負の重量でも対応できる
         // V = 頂点, E = 辺
@@ -20,6 +23,7 @@ public class BellmanFord {
             for (int j = 0; j < E; j++) {
                 // disは現在の重み
                 // graphは{始点、頂点, 重み}
+                // スタート地点から頂点元までの最短距離 + エッジの距離
                 if (dis[graph[j][0]] + graph[j][2] < dis[graph[j][1]]) {
                     dis[graph[j][1]] =
                             dis[graph[j][0]] + graph[j][2];
