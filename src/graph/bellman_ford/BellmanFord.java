@@ -21,9 +21,9 @@ public class BellmanFord {
         // V = 頂点, E = 辺
         for (int i = 0; i < V - 1; i++) {
             for (int j = 0; j < E; j++) {
-                // disは現在の重み
-                // graphは{始点、頂点, 重み}
-                // スタート地点から頂点元までの最短距離 + エッジの距離
+                // disは距離
+                // graphは{始点、頂点, 距離}
+                // スタート地点から頂点までの最短距離 + エッジの距離
                 if (dis[graph[j][0]] + graph[j][2] < dis[graph[j][1]]) {
                     dis[graph[j][1]] =
                             dis[graph[j][0]] + graph[j][2];
