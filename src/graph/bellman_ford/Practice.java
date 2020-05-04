@@ -13,13 +13,6 @@ public class Practice {
         dis[src] = 0;
 
         //　ここにコードを記載
-        for(int i = 0; i < V; i++) {
-            for(int j = 0; j < V; j++) {
-                if(dis[graph[j][0]] + graph[j][1] < graph[j][1]) {
-                    dis[graph[j][1]] = dis[graph[j][0]] + graph[j][2];
-                }
-            }
-        }
 
 
         System.out.println("原点からそれぞれの頂点の距離は.....");
