@@ -59,7 +59,7 @@ public class Main {
                 if(!fix[i] && adjacencyMatrix[minStation][i] > 0) {
                     // 新しい時間 = minStationを基点に隣接の駅のコストを足した時間
                     int newTime = minTime + adjacencyMatrix[minStation][i];
-                    // 探索したい or 現在のコスト以下で隣接する駅に行けるか
+                    // 探索してない or 現在のコスト以下で隣接する駅に行けるか
                     if(currentTime[i] == -1 || currentTime[i] > newTime) {
                         currentTime[i] = newTime;
                     }
