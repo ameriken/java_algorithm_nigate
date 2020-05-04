@@ -55,7 +55,7 @@ public class Main {
                 if(!fix[i] && adjacencyMatrix[minStation][i] > 0) {
                     // 新しい時間 = 現在の時間 + 現在地点からの目標地点
                     int newTime = minTime + adjacencyMatrix[minStation][i];
-                    // 経路未開拓 or 新しい道の方が短いか
+                    // 経路不明 or 新しい道の方が短いか
                     if(currentCost[i] == -1 || currentCost[i] > newTime) {
                         currentCost[i] = newTime;
                     }
@@ -64,13 +64,11 @@ public class Main {
 
             // 経路探索済みとしてtrueにする
             fix[minStation] = true;
-    }
+        }
 
         for(int i =0; i < STATION_NUMBER; i++) {
             System.out.println(stations[START_STATION] + "->" + stations[i] + ":" +
                     currentCost[i] + "分");
         }
-
-
     }
 }
