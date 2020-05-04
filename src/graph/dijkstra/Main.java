@@ -32,12 +32,18 @@ public class Main {
         currentCost[START_STATION] = 0;
 
         for(;;) {
-            int minStation = -1, minTime = -1;
 
+            //minStation = 最短距離が確定していない中で、
+            //最も始点からのコストが小さい駅（つまり、次に最短距離を確定させたい駅）
+            int minStation = -1;
+            //minTime = minStationまでの現在の暫定コスト
+            int minTime = -1;
+
+            // 次基点にする駅を調べる
             for(int i = 0; i < STATION_NUMBER; i++) {
-                // 探索済みではない && 現在の費用が初期値と違っている
+                // 探索済みではない && 最短距離を調べてない場所
                 if(!fix[i] && currentCost[i] != -1) {
-                    // 初期値の場所 or  現在の場所より時間がかかる
+                    // 暫定的に調べたい駅 or 暫定時間が現在のコストよりも大きいか
                     if(minStation == -1 || minTime > currentCost[i]) {
                         minTime = currentCost[i];
                         minStation = i;
@@ -46,16 +52,14 @@ public class Main {
             }
 
             // 無限ループにならないようにする
-            if(minTime == -1) {
-                break;
-            }
+            if(minTime == -1) break;
 
             for(int i = 0; i < STATION_NUMBER; i++) {
                 // 経路未探索であり、今の場所から新しい道が0以上であるか
                 if(!fix[i] && adjacencyMatrix[minStation][i] > 0) {
-                    // 新しい時間 = 現在の時間 + 現在地点からの目標地点
+                    // 新しい時間 = minStationを基点に隣接の駅のコストを足した時間
                     int newTime = minTime + adjacencyMatrix[minStation][i];
-                    // 経路不明 or 新しい道の方が短いか
+                    // 探索したい or 現在のコスト以下で隣接する駅に行けるか
                     if(currentCost[i] == -1 || currentCost[i] > newTime) {
                         currentCost[i] = newTime;
                     }
