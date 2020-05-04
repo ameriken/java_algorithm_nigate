@@ -34,10 +34,10 @@ public class Main {
         for(;;) {
             int minStation = -1, minTime = -1;
 
-            // ここでどの経路に進むか決める
-            // もっとも所要時間の小さい駅を調べる
             for(int i = 0; i < STATION_NUMBER; i++) {
+                // 探索済みではない && 現在の費用が初期値と違っている
                 if(!fix[i] && currentCost[i] != -1) {
+                    // 初期値の場所 or  現在の場所より時間がかかる
                     if(minStation == -1 || minTime > currentCost[i]) {
                         minTime = currentCost[i];
                         minStation = i;
@@ -50,9 +50,10 @@ public class Main {
                 break;
             }
 
-            // 経路未探索であり、今の場所から新しい道がどれだけ増えているか
             for(int i = 0; i < STATION_NUMBER; i++) {
+                // 経路未探索であり、今の場所から新しい道が0以上であるか
                 if(!fix[i] && adjacencyMatrix[minStation][i] > 0) {
+                    // 新しい時間 = 現在の時間 + 現在地点からの目標地点
                     int newTime = minTime + adjacencyMatrix[minStation][i];
                     // 経路未開拓 or 新しい道の方が短いか
                     if(currentCost[i] == -1 || currentCost[i] > newTime) {
@@ -63,7 +64,7 @@ public class Main {
 
             // 経路探索済みとしてtrueにする
             fix[minStation] = true;
-        }
+    }
 
         for(int i =0; i < STATION_NUMBER; i++) {
             System.out.println(stations[START_STATION] + "->" + stations[i] + ":" +
