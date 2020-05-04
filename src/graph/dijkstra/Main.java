@@ -2,7 +2,7 @@ package graph.dijkstra;
 
 import javax.print.DocFlavor;
 
-public class Dijkstra {
+public class Main {
 
     private static String[] stations = {"横浜", "武蔵小杉","品川","渋谷","新橋","溜池山王"};
     private static final int STATION_NUMBER = stations.length;
