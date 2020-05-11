@@ -18,7 +18,7 @@ public class Main {
     public static boolean judge(Integer bit) {
 
         for (int i = 0; i < N; ++i) {
-            // i人目が「不親切」だったら、証言は無意味
+            // 仮定した証言のi人目が「不親切」だったら、証言は無意味
             if ((bit & (1 << i)) == 0) continue;
 
             List<List<Integer>> xys = list.get(i);
