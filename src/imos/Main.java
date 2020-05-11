@@ -1,7 +1,9 @@
 package imos;
 
-public class Main {
+// 問題URL
+// https://atcoder.jp/contests/abc014/tasks/abc014_3
 
+public class Main {
 
     public static void main(String[] args) {
         // アンケートの数
