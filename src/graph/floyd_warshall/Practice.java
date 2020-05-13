@@ -4,11 +4,10 @@ public class Practice {
 
     void execute(int graph[][], int V, int INF) {
         int dist[][] = new int[V][V];
-        int i, j, k;
 
         // ここでdistを初期化する
-        for (i = 0; i < V; i++) {
-            for (j = 0; j < V; j++) {
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
                 dist[i][j] = graph[i][j];
             }
         }
