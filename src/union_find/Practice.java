@@ -19,7 +19,7 @@ public class Practice {
 
     boolean connect(int a, int b) {
         //ここにコードをかく
-        return false;
+        return true;
     }
 
     boolean isConnect(int a, int b) {
