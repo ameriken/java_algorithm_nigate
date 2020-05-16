@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 class Dfs {
-    static int n,time = 1;
+    static int time = 1;
     static int[][] graph;
     static int[] d,f,fin;
 

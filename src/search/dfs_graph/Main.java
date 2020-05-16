@@ -31,6 +31,7 @@ class Main {
             }
             if(i == n) break;
         }
+
         for(int i = 0;i < n;i++){
             System.out.println((i + 1) + " " + dfs.d[i] + " " + dfs.f[i]);
         }
