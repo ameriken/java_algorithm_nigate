@@ -16,6 +16,4 @@ public class Practice {
         //ここにコードを書く
         return true;
     }
-
-
 }
