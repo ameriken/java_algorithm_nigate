@@ -6,55 +6,33 @@ import java.util.Scanner;
 import static search.dfs_square.Dfs.getProbability;
 
 class Main {
-    static int n,time = 1;
-
-    static int[][] graph;
-
-    static int[] d,f,fin;
-
-    static void dfs(int id){
-        d[id] = time++;
-        fin[id] = 1;
-        for(int i = 0;i < graph[id].length;i++){
-            if(fin[graph[id][i]] == 0){
-                dfs(graph[id][i]);
-            }
-        }
-        f[id] = time++;
-    }
 
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
-        n = input.nextInt();
-
-        graph = new int[n][];
-        d = new int[n];
-        f = new int[n];
-        fin = new int[n];
+        Integer n = input.nextInt();
+        Dfs dfs = new Dfs(n);
 
         for(int i = 0;i < n;i++){
             int u = input.nextInt();
             int k = input.nextInt();
-            graph[u - 1] = new int[k];
+            dfs.graph[u - 1] = new int[k];
             for(int j = 0;j < k;j++){
-                graph[u - 1][j] = input.nextInt() - 1;
+                dfs.graph[u - 1][j] = input.nextInt() - 1;
             }
-            Arrays.sort(graph[u - 1]);
+            Arrays.sort(dfs.graph[u - 1]);
         }
 
         while(true){
-            int iii;
-            for( iii = 0;iii < n;iii++){
-                if(fin[iii] == 0){
-                    dfs(iii);
-                    break;
-                }
-            }
-            if(iii == n)
+            int i;
+            for(i = 0; i < n; i++){
+                if(dfs.fin[i] != 0) continue;
+                dfs.execute(i);
                 break;
+            }
+            if(i == n) break;
         }
         for(int i = 0;i < n;i++){
-            System.out.println((i + 1) + " " + d[i] + " " + f[i]);
+            System.out.println((i + 1) + " " + dfs.d[i] + " " + dfs.f[i]);
         }
     }
 }
