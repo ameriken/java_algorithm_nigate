@@ -1,4 +1,4 @@
-package search.dfs;
+package search.dfs_square;
 
 public class Dfs {
 

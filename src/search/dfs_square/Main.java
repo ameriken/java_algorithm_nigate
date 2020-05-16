@@ -1,6 +1,6 @@
-package search.dfs;
+package search.dfs_square;
 
-import static search.dfs.Dfs.getProbability;
+import static search.dfs_square.Dfs.getProbability;
 
 public class Main {
     public static void main(String[] args) {
