@@ -1,7 +1,4 @@
-package search.bfs;
-
-import java.util.LinkedList;
-import java.util.Queue;
+package search.bfs_graph;
 
 public class Practice {
 

@@ -1,7 +1,7 @@
-package search.bfs;
+package search.bfs_graph;
 
 
-import static search.bfs.Bfs.longestPath;
+import static search.bfs_graph.Bfs.longestPath;
 //import static search.bfs.Practice.longestPath;
 
 public class Main {

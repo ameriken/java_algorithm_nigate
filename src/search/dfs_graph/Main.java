@@ -41,9 +41,10 @@ class Main {
             Integer a = Integer.parseInt(scanner.next());
             graph[a].add(Integer.parseInt(scanner.next()));
         }
-        Arrays.fill(seen, false);
-        dfs(graph, s);
 
+        Arrays.fill(seen, false);
+
+        dfs(graph, s);
         if (seen[t]) {
             System.out.println("Yes");
         } else {

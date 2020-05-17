@@ -1,6 +1,5 @@
-package search.bfs;
+package search.bfs_grid;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
