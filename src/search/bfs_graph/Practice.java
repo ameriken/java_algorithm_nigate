@@ -1,11 +1,14 @@
 package search.bfs_graph;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Practice {
 
     static boolean[] isChecked;
+    public static void dfs(LinkedList<Integer>[] graph, Integer v) {
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -16,6 +19,13 @@ public class Practice {
 
         isChecked = new boolean[V];
         Arrays.fill(isChecked, false);
+
+
+        if (isChecked[t]) {
+            System.out.println("Yes");
+        }else {
+            System.out.println("No");
+        }
 
     }
 }
