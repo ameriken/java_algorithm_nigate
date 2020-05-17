@@ -1,14 +1,24 @@
 package search.bfs_grid;
 
+import java.util.Scanner;
+
 public class Practice {
 
-    public static int longestPath(String[] maze, int startRow, int startCol,
-                                  int[] moveRow, int[] moveCol) {
-        int max = 0;
-        int width = maze[0].length(), height = maze.length;
-        int[][] board = new int[height][width];
+    static Integer[][] dist;
+    static String[][] maze;
+    static Integer INF = Integer.MAX_VALUE;
+    static int vx[] = {1, -1, 0, 0};
+    static int vy[] = {0, 0, 1, -1};
 
-        // ここにコードを書いてください。
-        return max;
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        Integer R = Integer.parseInt(scanner.next());
+        Integer C = Integer.parseInt(scanner.next());
+        Integer sy = Integer.parseInt(scanner.next()) - 1;
+        Integer sx = Integer.parseInt(scanner.next()) - 1;
+        Integer gy = Integer.parseInt(scanner.next()) - 1;
+        Integer gx = Integer.parseInt(scanner.next()) - 1;
+
     }
 }

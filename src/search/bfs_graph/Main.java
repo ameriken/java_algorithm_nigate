@@ -19,7 +19,7 @@ yes
 
 public class Main {
 
-    static boolean[] seen;
+    static boolean[] isChecked;
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -28,8 +28,8 @@ public class Main {
         Integer s = Integer.parseInt(scanner.next());
         Integer t = Integer.parseInt(scanner.next());
 
-        seen = new boolean[V];
-        Arrays.fill(seen, false);
+        isChecked = new boolean[V];
+        Arrays.fill(isChecked, false);
 
         LinkedList<Integer>[] graph = new LinkedList[V];
         for (int i=0; i < V; i++) graph[i] = new LinkedList();
@@ -42,16 +42,16 @@ public class Main {
         Queue<Integer> que = new LinkedList<>();
         que.add(s);
 
-        seen[s] = true;
+        isChecked[s] = true;
         while(que.size() != 0) {
             Integer state = que.poll();
             for (Integer next : graph[state]) {
-                if (seen[next])  continue;;
-                seen[next] = true;
+                if (isChecked[next])  continue;;
+                isChecked[next] = true;
                 que.add(next);
             }
         }
-        if (seen[t]) {
+        if (isChecked[t]) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
