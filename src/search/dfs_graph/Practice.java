@@ -17,5 +17,10 @@ public class Practice {
 
         // ここにコードを書く
 
+        if (isChecked[t]) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
     }
 }
