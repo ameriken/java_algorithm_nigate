@@ -1,8 +1,7 @@
-package search.dfs_square;
+package search.dfs_grid;
 
 import java.util.*;
-
-import static search.dfs_square.Dfs.getProbability;
+// https://atcoder.jp/contests/atc001/tasks/dfs_a
 
 public class Main {
     static boolean[][] seen;

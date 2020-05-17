@@ -1,6 +1,20 @@
 package search.dfs_graph;
 
 import java.util.*;
+//元ネタ: https://algo-logic.info/dfs/
+/*
+入力：
+4 5
+0 3
+0 1
+0 2
+1 3
+2 1
+2 3
+出力：
+yes
+*/
+
 
 class Main {
 

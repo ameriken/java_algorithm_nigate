@@ -1,4 +1,4 @@
-package search.dfs_square;
+package search.dfs_grid;
 
 public class Practice {
 
