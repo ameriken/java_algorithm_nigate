@@ -22,7 +22,8 @@ class Main {
     public static void dfs(LinkedList<Integer>[] graph, Integer v) {
         seen[v] = true;
         for (Integer next : graph[v]) {
-            if(!seen[next]) dfs(graph, next);
+            if(seen[next]) continue;
+            dfs(graph, next);
         }
     }
 
@@ -33,9 +34,7 @@ class Main {
 
         seen = new boolean[V];
         LinkedList<Integer> graph[] = new LinkedList[V];
-        for (int i=0; i<V; ++i) {
-            graph[i] = new LinkedList();
-        }
+        for (int i=0; i < V; i++) graph[i] = new LinkedList();
 
         for (int i = 0; i < E; i++) {
             Integer a = Integer.parseInt(scanner.next());

@@ -1,5 +1,6 @@
 package search.bfs_graph;
 
+// 元ネタ: https://algo-logic.info/bfs/
 
 import java.util.*;
 
@@ -31,7 +32,7 @@ public class Main {
         Arrays.fill(seen, false);
 
         LinkedList<Integer>[] graph = new LinkedList[V];
-        for (int i=0; i<V; ++i) graph[i] = new LinkedList();
+        for (int i=0; i < V; i++) graph[i] = new LinkedList();
 
         for (int i = 0; i < E; i++) {
             Integer a = Integer.parseInt(scanner.next());
@@ -45,10 +46,9 @@ public class Main {
         while(que.size() != 0) {
             Integer state = que.poll();
             for (Integer next : graph[state]) {
-                if (!seen[next]) {
-                    seen[next] = true;
-                    que.add(next);
-                }
+                if (seen[next])  continue;;
+                seen[next] = true;
+                que.add(next);
             }
         }
         if (seen[t]) {

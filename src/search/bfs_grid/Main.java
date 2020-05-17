@@ -1,5 +1,6 @@
 package search.bfs_grid;
 
+// 元ネタ: https://algo-logic.info/bfs/
 
 import java.util.*;
 
@@ -23,6 +24,7 @@ public class Main {
         dist = new Integer[R][C];
         maze = new String[R][C];
 
+        // 初期化
         for (String[] m : maze) Arrays.fill(m, ".");
         for (Integer[] d : dist) Arrays.fill(d, INF);
 
