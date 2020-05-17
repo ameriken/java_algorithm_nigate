@@ -18,11 +18,12 @@ yes
 
 class Main {
 
-    static boolean[] seen;
+    static boolean[] isChecked;
+
     public static void dfs(LinkedList<Integer>[] graph, Integer v) {
-        seen[v] = true;
+        isChecked[v] = true;
         for (Integer next : graph[v]) {
-            if(seen[next]) continue;
+            if (isChecked[next]) continue;
             dfs(graph, next);
         }
     }
@@ -32,19 +33,19 @@ class Main {
         Integer V = Integer.parseInt(scanner.next()), E = Integer.parseInt(scanner.next());
         Integer s = Integer.parseInt(scanner.next()), t = Integer.parseInt(scanner.next());
 
-        seen = new boolean[V];
+        isChecked = new boolean[V];
         LinkedList<Integer> graph[] = new LinkedList[V];
-        for (int i=0; i < V; i++) graph[i] = new LinkedList();
+        for (int i = 0; i < V; i++) graph[i] = new LinkedList();
 
         for (int i = 0; i < E; i++) {
             Integer a = Integer.parseInt(scanner.next());
             graph[a].add(Integer.parseInt(scanner.next()));
         }
 
-        Arrays.fill(seen, false);
+        Arrays.fill(isChecked, false);
 
         dfs(graph, s);
-        if (seen[t]) {
+        if (isChecked[t]) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
