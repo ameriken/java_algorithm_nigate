@@ -32,7 +32,7 @@ public class Main {
         Arrays.fill(isChecked, false);
 
         LinkedList<Integer>[] graph = new LinkedList[V];
-        for (int i=0; i < V; i++) graph[i] = new LinkedList();
+        for (int i=0; i < V; i++) graph[i] = new LinkedList<>();
 
         for (int i = 0; i < E; i++) {
             Integer a = Integer.parseInt(scanner.next());
