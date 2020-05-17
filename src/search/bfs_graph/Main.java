@@ -40,8 +40,8 @@ public class Main {
 
         Queue<Integer> que = new LinkedList<>();
         que.add(s);
-        seen[s] = true;
 
+        seen[s] = true;
         while(que.size() != 0) {
             Integer state = que.poll();
             for (Integer next : graph[state]) {
