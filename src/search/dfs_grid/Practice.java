@@ -1,34 +1,32 @@
 package search.dfs_grid;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Practice {
 
-    static double[] prob = new double[4];
-    static boolean[][] grid = new boolean[100][100];
 
-    // x座標
-    // 値を書いてください
-    static int vx[] = {};
+    static boolean[][] seen;
+    static String[][] maze;
+    static Integer H;
+    static Integer W;
 
-    // y座標
-    // 値を書いてください
-    static int vy[] = {};
+    static int vx[] = {1, -1, 0, 0};
+    static int vy[] = {0, 0, 1, -1};
 
-
-    // ここにコードを記載
-    public static double dfs(int x, int y, int  n) {
-        // 便宜上コードを記載した
-        return (double) 0.0;
+    public static void dfs(Integer[] currentPos) {
     }
 
+    public static void main(String[] args) {
+        //コード
+        Scanner scanner = new Scanner(System.in);
+        H = Integer.parseInt(scanner.next());
+        W = Integer.parseInt(scanner.next());
+        seen = new boolean[H][W];
+        maze = new String[H][W];
 
-    // nはマスの進む回数
-    public static double getProbability(int n, int east, int west, int south, int north) {
-
-        prob[0] = east  / 100.0;
-        prob[1] = west  / 100.0;
-        prob[2] = south / 100.0;
-        prob[3] = north / 100.0;
-        return dfs(50,50, n);
+        Integer[] currentPos = new Integer[2];
+        Integer[] isGoal = new Integer[2];
 
     }
 }
