@@ -1,11 +1,6 @@
 package search.dfs_graph;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
-
-import static search.dfs_square.Dfs.getProbability;
+import java.util.*;
 
 class Main {
 
