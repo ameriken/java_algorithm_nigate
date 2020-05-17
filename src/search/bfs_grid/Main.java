@@ -1,25 +1,58 @@
 package search.bfs_grid;
 
 
-import static search.bfs_graph.Bfs.longestPath;
-//import static search.bfs.Practice.longestPath;
+import java.util.*;
 
 public class Main {
 
+    static Integer[][] dist;
+    static String[][] maze;
+    static Integer INF = Integer.MAX_VALUE;
+    static int vx[] = {1, -1, 0, 0};
+    static int vy[] = {0, 0, 1, -1};
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Integer R = Integer.parseInt(scanner.next());
+        Integer C = Integer.parseInt(scanner.next());
+        Integer sy = Integer.parseInt(scanner.next()) - 1;
+        Integer sx = Integer.parseInt(scanner.next()) - 1;
+        Integer gy = Integer.parseInt(scanner.next()) - 1;
+        Integer gx = Integer.parseInt(scanner.next()) - 1;
 
-        //コード
-        String[] maze = {
-                "...",
-                "...",
-                "..."
-        };
+        dist = new Integer[R][C];
+        maze = new String[R][C];
 
-        int startRow= 0;
-        int startCol= 1;
-        int[] moveRow = {1, 0, -1, 0};
-        int[] moveCol = {0, 1, 0, -1};
+        for (String[] m : maze) Arrays.fill(m, ".");
+        for (Integer[] d : dist) Arrays.fill(d, INF);
 
-        System.out.println(longestPath(maze, startRow, startCol, moveRow, moveCol));
+        for (int i = 0; i < R; i++) {
+            String tmp = scanner.next();
+            for (int j = 0; j < C; j++) {
+                maze[i][j] = String.valueOf(tmp.charAt(j));
+            }
+        }
+
+        Queue<Queue<Integer>> que = new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>();
+        q.add(sy); q.add(sx);que.add(q);
+
+        dist[sy][sx] = 0;
+        while(que.size() != 0) {
+            Queue<Integer> now = que.poll();
+            Integer y =  now.poll(), x = now.poll();
+            if(y == gy && x == gx) break;
+
+            for (int i = 0; i < 4; i++) {
+                int nextY = y + vy[i];  // 次の探索場所の行番号
+                int nextX = x + vx[i];  // 次の探索場所の列番号
+                if (nextY < 0 || R <= nextY || nextX < 0 || C <= nextX) continue;  // 迷路の外に出るならスルー
+                if (maze[nextY][nextX].equals("#")) continue; // 障害物があればスルー
+                if (dist[nextY][nextX] != INF) continue; //探索済みならスルー
+                q.add(nextY); q.add(nextX);que.add(q);
+                dist[nextY][nextX] = dist[y][x] + 1;
+            }
+        }
+        System.out.println(dist[gy][gx]);
     }
 }
