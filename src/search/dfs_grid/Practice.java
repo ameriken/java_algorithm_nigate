@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Practice {
 
 
-    static boolean[][] seen;
+    static boolean[][] isChecked;
     static String[][] maze;
     static Integer H;
     static Integer W;
@@ -22,7 +22,7 @@ public class Practice {
         Scanner scanner = new Scanner(System.in);
         H = Integer.parseInt(scanner.next());
         W = Integer.parseInt(scanner.next());
-        seen = new boolean[H][W];
+        isChecked = new boolean[H][W];
         maze = new String[H][W];
 
         Integer[] currentPos = new Integer[2];
