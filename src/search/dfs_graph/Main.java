@@ -1,38 +1,44 @@
 package search.dfs_graph;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 import static search.dfs_square.Dfs.getProbability;
 
 class Main {
 
+    static boolean[] seen;
+    public static void dfs(LinkedList<Integer>[] graph, Integer v) {
+        seen[v] = true;
+        for (Integer next : graph[v]) {
+            if(!seen[next]) dfs(graph, next);
+        }
+    }
+
     public static void main(String args[]) {
-        Scanner input = new Scanner(System.in);
-        Integer n = input.nextInt();
-        Dfs dfs = new Dfs(n);
+        Scanner scanner = new Scanner(System.in);
+        Integer V = Integer.parseInt(scanner.next());
+        Integer E = Integer.parseInt(scanner.next());
+        Integer s = Integer.parseInt(scanner.next());
+        Integer t = Integer.parseInt(scanner.next());
 
-        for(int i = 0;i < n;i++){
-            int u = input.nextInt(),k = input.nextInt();
-            dfs.graph[u - 1] = new int[k];
-            for(int j = 0;j < k;j++){
-                dfs.graph[u - 1][j] = input.nextInt() - 1;
-            }
-            Arrays.sort(dfs.graph[u - 1]);
+        seen = new boolean[V];
+        LinkedList<Integer> graph[] = new LinkedList[V];
+        for (int i=0; i<V; ++i) graph[i] = new LinkedList();
+
+        for (int i = 0; i < E; i++) {
+            Integer a = Integer.parseInt(scanner.next());
+            graph[a].add(Integer.parseInt(scanner.next()));
         }
+        Arrays.fill(seen, false);
+        dfs(graph, s);
 
-        while(true){
-            int i;
-            for(i = 0; i < n; i++){
-                if(dfs.fin[i] != 0) continue;
-                dfs.execute(i);
-                break;
-            }
-            if(i == n) break;
-        }
-
-        for(int i = 0;i < n;i++){
-            System.out.println((i + 1) + " " + dfs.d[i] + " " + dfs.f[i]);
+        if (seen[t]) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
         }
     }
 }
