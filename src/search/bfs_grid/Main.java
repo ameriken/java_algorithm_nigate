@@ -33,23 +33,25 @@ public class Main {
             }
         }
 
-        Queue<Queue<Integer>> que = new LinkedList<>();
-        Queue<Integer> q = new LinkedList<>();
-        q.add(sy); q.add(sx);que.add(q);
+        Queue<Integer[]> que = new LinkedList<>();
+        Integer[] q = new Integer[2];
+        q[0] = sy; q[1] = sx; que.add(q);
 
         dist[sy][sx] = 0;
         while(que.size() != 0) {
-            Queue<Integer> now = que.poll();
-            Integer y =  now.poll(), x = now.poll();
+            Integer[] now = que.poll();
+            Integer y =  now[0], x = now[1];
             if(y == gy && x == gx) break;
-
             for (int i = 0; i < 4; i++) {
-                int nextY = y + vy[i];  // 次の探索場所の行番号
-                int nextX = x + vx[i];  // 次の探索場所の列番号
-                if (nextY < 0 || R <= nextY || nextX < 0 || C <= nextX) continue;  // 迷路の外に出るならスルー
-                if (maze[nextY][nextX].equals("#")) continue; // 障害物があればスルー
-                if (dist[nextY][nextX] != INF) continue; //探索済みならスルー
-                q.add(nextY); q.add(nextX);que.add(q);
+                // 次の探索場所の行番号   // 次の探索場所の列番号
+                int nextY = y + vy[i], nextX = x + vx[i];
+                // 迷路の外に出るならスルー
+                if (nextY < 0 || R <= nextY || nextX < 0 || C <= nextX) continue;
+                // 障害物があればスルー
+                if (maze[nextY][nextX].equals("#")) continue;
+                //探索済みならスルー
+                if (dist[nextY][nextX] != INF) continue;
+                q[0] = nextY; q[1] = nextX; que.add(q);
                 dist[nextY][nextX] = dist[y][x] + 1;
             }
         }
