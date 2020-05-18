@@ -1,8 +1,6 @@
 package search.bfs_graph;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Practice {
 
