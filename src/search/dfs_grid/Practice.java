@@ -28,6 +28,8 @@ public class Practice {
         Integer[] currentPos = new Integer[2];
         Integer[] isGoal = new Integer[2];
 
+        // ここにコードを書く
+
         int f = isGoal[0], y = isGoal[1];
         if(isChecked[f][y]) {
             System.out.println("Yes");
