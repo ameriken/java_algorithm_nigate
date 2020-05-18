@@ -18,7 +18,6 @@ public class Practice {
         Integer t = Integer.parseInt(scanner.next());
 
         isChecked = new boolean[V];
-        Arrays.fill(isChecked, false);
 
 
         if (isChecked[t]) {
