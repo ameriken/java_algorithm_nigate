@@ -42,8 +42,6 @@ class Main {
             graph[a].add(Integer.parseInt(scanner.next()));
         }
 
-        Arrays.fill(isChecked, false);
-
         dfs(graph, s);
         if (isChecked[t]) {
             System.out.println("Yes");

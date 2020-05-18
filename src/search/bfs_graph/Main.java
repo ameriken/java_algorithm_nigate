@@ -29,7 +29,6 @@ public class Main {
         Integer t = Integer.parseInt(scanner.next());
 
         isChecked = new boolean[V];
-        Arrays.fill(isChecked, false);
 
         LinkedList<Integer>[] graph = new LinkedList[V];
         for (int i=0; i < V; i++) graph[i] = new LinkedList<>();

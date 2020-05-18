@@ -41,7 +41,6 @@ public class Main {
         Integer[] isGoal = new Integer[2];
 
         for (String[] m: maze) Arrays.fill(m,".");
-        for (boolean[] c: isChecked) Arrays.fill(c,false);
 
         for (int y = 0; y < H; y++) {
             String tmp = scanner.next();
