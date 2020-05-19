@@ -5,8 +5,6 @@ import java.util.*;
 public class Practice {
 
     static boolean[] isChecked;
-    public static void dfs(LinkedList<Integer>[] graph, Integer v) {
-    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
