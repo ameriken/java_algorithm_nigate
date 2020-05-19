@@ -1,7 +1,6 @@
 package search.dfs_grid;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Practice {
 
