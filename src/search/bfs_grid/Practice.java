@@ -1,6 +1,6 @@
 package search.bfs_grid;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Practice {
 
