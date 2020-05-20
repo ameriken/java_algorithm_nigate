@@ -8,10 +8,8 @@ public class Practice {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Integer V = Integer.parseInt(scanner.next());
-        Integer E = Integer.parseInt(scanner.next());
-        Integer s = Integer.parseInt(scanner.next());
-        Integer t = Integer.parseInt(scanner.next());
+        Integer V = Integer.parseInt(scanner.next()), E = Integer.parseInt(scanner.next());
+        Integer s = Integer.parseInt(scanner.next()), t = Integer.parseInt(scanner.next());
 
         isChecked = new boolean[V];
 
